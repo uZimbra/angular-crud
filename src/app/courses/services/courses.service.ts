@@ -13,6 +13,10 @@ export class CoursesService {
   constructor(private httpClient: HttpClient) {}
 
   list(): Observable<Course[]> {
-    return this.httpClient.get<Course[]>(this.API).pipe(first(), delay(3000));
+    return this.httpClient
+      .get<Course[]>(this.API)
+      .pipe
+      // first(), delay(3000)
+      ();
   }
 }
